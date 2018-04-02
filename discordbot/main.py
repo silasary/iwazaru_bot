@@ -23,6 +23,8 @@ async def on_message(message: Message) -> None:
     BOT.cache[message] = MessageData()
     if message.author == BOT.client.user:
         return
+    if message.author.bot:
+        return
     BOT.cache[message].response_text = warnings.parse_message(message.content)
     if BOT.cache[message].response_text is not None:
         await BOT.client.add_reaction(message, "🙊")
