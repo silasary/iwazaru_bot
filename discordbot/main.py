@@ -1,3 +1,4 @@
+import sys
 from typing import Dict
 
 import discord
@@ -5,8 +6,9 @@ from discord.message import Message
 
 from shared import configuration
 
-from .messagedata import MessageData
 from . import warnings
+from .messagedata import MessageData
+
 
 class Bot:
     def __init__(self) -> None:
@@ -29,7 +31,7 @@ async def on_message(message: Message) -> None:
     if BOT.cache[message].response_text is not None:
         await BOT.client.add_reaction(message, "🙊")
     if message.content == '!restartbot':
-        await bot.client.send_message(channel, 'Rebooting!')
+        await BOT.client.send_message(message.channel, 'Rebooting!')
         sys.exit()
 
 @BOT.client.event
