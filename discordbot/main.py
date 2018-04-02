@@ -44,7 +44,7 @@ async def on_ready() -> None:
 @BOT.client.event
 async def on_server_join(server) -> None:
     await BOT.client.send_message(server.default_channel, ":see_no_evil: :hear_no_evil: :speak_no_evil:")
-    pass
+    await BOT.client.send_message(server.default_channel, "If I react to a message, click on that reaction to see more details.")
 
 @BOT.client.event
 async def on_reaction_add(reaction, author) -> None:
