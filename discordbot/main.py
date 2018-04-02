@@ -28,6 +28,9 @@ async def on_message(message: Message) -> None:
     BOT.cache[message].response_text = warnings.parse_message(message.content)
     if BOT.cache[message].response_text is not None:
         await BOT.client.add_reaction(message, "🙊")
+    if message.content == '!restartbot':
+        await bot.client.send_message(channel, 'Rebooting!')
+        sys.exit()
 
 @BOT.client.event
 async def on_ready() -> None:
