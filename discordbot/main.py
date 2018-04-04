@@ -9,11 +9,12 @@ from shared import configuration
 from . import warnings
 from .messagedata import MessageData
 
+from shared.limited_dict import LimitedSizeDict
 
 class Bot:
     def __init__(self) -> None:
         self.client = discord.Client()
-        self.cache: Dict[Message, MessageData] = {}
+        self.cache: Dict[Message, MessageData] = LimitedSizeDict(size_limit=1000)
 
     def init(self) -> None:
         self.client.run(configuration.get('token'))
@@ -22,14 +23,15 @@ BOT = Bot()
 
 @BOT.client.event
 async def on_message(message: Message) -> None:
-    BOT.cache[message] = MessageData()
     if message.author == BOT.client.user:
         return
     if message.author.bot:
         return
-    BOT.cache[message].response_text = warnings.parse_message(message.content)
-    if BOT.cache[message].response_text is not None:
+    data = MessageData()
+    data.response_text = warnings.parse_message(message.content)
+    if data.response_text is not None:
         await BOT.client.add_reaction(message, "🙊")
+        BOT.cache[message] = data
     if message.content == '!restartbot':
         await BOT.client.send_message(message.channel, 'Rebooting!')
         sys.exit()
@@ -55,7 +57,9 @@ async def on_reaction_add(reaction, author) -> None:
         if c > 0 and not reaction.custom_emoji and reaction.emoji == "❎":
             await BOT.client.delete_message(reaction.message)
     elif c > 0 and reaction.emoji == "🙊":
-        data = BOT.cache[reaction.message]
+        data = BOT.cache.get(reaction.message, None)
+        if data is None:
+            return
         if data.response_message is None and data.response_text is not None:
             await BOT.client.send_typing(reaction.message.channel)
             data.response_message = await BOT.client.send_message(reaction.message.channel, data.response_text)
