@@ -34,6 +34,7 @@ async def on_message(message: Message) -> None:
         BOT.cache[message] = data
     if message.content == '!restartbot':
         await BOT.client.send_message(message.channel, 'Rebooting!')
+        await BOT.client.logout()
         sys.exit()
 
 @BOT.client.event
