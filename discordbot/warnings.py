@@ -1,9 +1,9 @@
 import re
+from typing import Optional
 
 WARNINGS = {
     # Sexist/exclusionary language
     r'\b(females)\b': 'pretty objectifying, try "women" instead!',
-    r'\b(guys)\b': 'exclusionary language. Some alternatives: all, everyone, friends, folks, people',
     r'\b(hysterical)\b': 'sexist language. Some alternatives: hilarious, funny',
     # Mental conditions
     r'\b(stupid|retarded|idiotic)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse',
@@ -21,9 +21,14 @@ WARNINGS = {
     r'\b(psycho|schitzo|schizo|spaz|derp|spastic|spacker)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
 }
 
-def parse_message(text: str) -> str:
+def parse_message(text: str) -> Optional[str]:
     for key in WARNINGS:
         m = re.search(key, text, re.IGNORECASE)
         if m:
             return 'gentle reminder: {0} is {1}'.format(m.group(0), WARNINGS[key])
+
+    if re.search(r'\b(guys)\b', text, re.IGNORECASE):
+        return """Many people feel excluded when you refer to a group of people as "Guys".
+Some alternatives if you meant to refer to explicitly men: men, dudes
+Some alternatives if you meant to refer to people in general: all, everyone, friends, folks, people"""
     return None
