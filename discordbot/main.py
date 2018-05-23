@@ -3,6 +3,7 @@ from typing import Dict
 
 import discord
 from discord.message import Message
+from discord.errors import Forbidden
 
 from shared import configuration
 
@@ -30,8 +31,15 @@ async def on_message(message: Message) -> None:
     data = MessageData()
     data.response_text = warnings.parse_message(message.content)
     if data.response_text is not None:
-        await BOT.client.add_reaction(message, "🙊")
-        BOT.cache[message] = data
+        try:
+            await BOT.client.add_reaction(message, "🙊")
+            BOT.cache[message] = data
+        except Forbidden:
+            try:
+                data.response_message = await BOT.client.send_message(message.channel, '{m} {r}'.format(m=message.author.mention, r=data.response_text))
+                await BOT.client.add_reaction(data.response_message, "❎")
+            except Forbidden:
+                pass
     if message.content == '!restartbot':
         await BOT.client.send_message(message.channel, 'Rebooting!')
         await BOT.client.logout()
