@@ -35,11 +35,7 @@ async def on_message(message: Message) -> None:
             await BOT.client.add_reaction(message, "🙊")
             BOT.cache[message] = data
         except Forbidden:
-            try:
-                data.response_message = await BOT.client.send_message(message.channel, '{m} {r}'.format(m=message.author.mention, r=data.response_text))
-                await BOT.client.add_reaction(data.response_message, "❎")
-            except Forbidden:
-                pass
+            pass
     if message.content == '!restartbot':
         await BOT.client.send_message(message.channel, 'Rebooting!')
         await BOT.client.logout()
