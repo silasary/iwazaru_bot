@@ -1,5 +1,6 @@
-from typing import Any
 from collections import OrderedDict
+from typing import Any
+
 
 # https://stackoverflow.com/a/2437645
 class LimitedSizeDict(OrderedDict):

@@ -2,15 +2,17 @@ import sys
 from typing import Dict
 
 import discord
-from discord.message import Message
 from discord.errors import Forbidden
+from discord.message import Message
+from discord.reaction import Reaction
+from discord.server import Server
 
 from shared import configuration
+from shared.limited_dict import LimitedSizeDict
 
 from . import warnings
 from .messagedata import MessageData
 
-from shared.limited_dict import LimitedSizeDict
 
 class Bot:
     def __init__(self) -> None:
@@ -49,12 +51,12 @@ async def on_ready() -> None:
 
 
 @BOT.client.event
-async def on_server_join(server) -> None:
+async def on_server_join(server: Server) -> None:
     await BOT.client.send_message(server.default_channel, ":see_no_evil: :hear_no_evil: :speak_no_evil:")
     await BOT.client.send_message(server.default_channel, "If I react to a message, click on that reaction to see more details.")
 
 @BOT.client.event
-async def on_reaction_add(reaction, author) -> None:
+async def on_reaction_add(reaction: Reaction, author) -> None:
     c = reaction.count
     if reaction.me:
         c = c - 1
