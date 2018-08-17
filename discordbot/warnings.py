@@ -27,7 +27,7 @@ def parse_message(text: str) -> Optional[str]:
         if m:
             return 'gentle reminder: {0} is {1}'.format(m.group(0), WARNINGS[key])
 
-    if re.search(r'\b(guys)\b', text, re.IGNORECASE):
+    if re.search(r'\b(hey|hi|you)\W+(guys)\b', text, re.IGNORECASE):
         return """Many people feel excluded when you refer to a group of people as "Guys".
 Some alternatives if you meant to refer to explicitly men: men, dudes
 Some alternatives if you meant to refer to people in general: all, everyone, friends, folks, people"""
