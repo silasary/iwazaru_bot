@@ -3,7 +3,7 @@ from typing import Optional
 
 WARNINGS = {
     # Sexist/exclusionary language
-    r'\b(females)\b': 'pretty objectifying. If you are referring to women, use the gendered term instead',
+    r'\b(females)\b': 'pretty objectifying. If you are referring to women, use the gender term instead',
     r'\b(hysterical)\b': 'sexist language. Some alternatives: hilarious, funny',
     # Mental conditions
     r'\b(stupid|retarded|idiotic)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse',
