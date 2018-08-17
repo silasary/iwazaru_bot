@@ -53,13 +53,11 @@ async def on_message_edit(before: Message, after: Message) -> None:
 
     data = BOT.cache.get(after, None)
     if data is None:
-        print('no data')
         return
 
     data.response_text = warnings.parse_message(after.content)
     prev_reacted = [r for r in after.reactions if r.me]
     if data.response_text is None and prev_reacted:
-        print('removing reaction')
         await BOT.client.remove_reaction(after, "🙊", BOT.client.user)
         if data.response_message is not None:
             await BOT.client.delete_message(data.response_message)
