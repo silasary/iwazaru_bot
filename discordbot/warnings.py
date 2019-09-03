@@ -6,7 +6,7 @@ WARNINGS = {
     r'\b(females)\b': 'pretty objectifying. If you are referring to women, use the gender term instead',
     r'\b(hysterical)\b': 'sexist language. Some alternatives: hilarious, funny',
     # Mental conditions
-    r'\b(stupid|retarded|idiotic)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse',
+    r'\b(stupid|retarded|idiotic)\b': 'ableist language. Some alternatives: pathetic, uninspiring, vapid, obtuse, silly',
     r'\b(crazy|insane|bonkers)\b': 'ableist language. Some alternatives: ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
     r'\b(mad)\b': 'ableist language. Some alternatives: angry, furious, annoyed',
     r'\b(idiot|idiotic|imbecile|moron|retard|lunatic)\b': 'ableist language. Some alternatives: uninformed, ignorant, incorrect, wrong',
