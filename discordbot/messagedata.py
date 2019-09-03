@@ -1,7 +1,8 @@
 from typing import Optional
 
-from discord import Message
 from munch import Munch
+
+from discord import Message
 
 __all__ = ('MessageData')
 
