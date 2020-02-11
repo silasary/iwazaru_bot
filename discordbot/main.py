@@ -7,6 +7,7 @@ from discord.guild import Guild
 from discord.message import Message
 from discord.reaction import Reaction
 from discord.user import User
+
 from shared import configuration
 from shared.limited_dict import LimitedSizeDict
 
