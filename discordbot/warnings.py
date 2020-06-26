@@ -40,6 +40,7 @@ WARNINGS = {
     r'\b(wigger|whigger|wigga)\b': 'a racial slur against white people perceived to be "acting black"',
     r'\b(paki|pakki|pak)\b': 'a slur against Pakistanis and Middle-Easterners in general',
     r'\b(nigger|nigga|niggress|nigette|niglet|nig|nigor|nigra|nigre|nigar|niggur|niggah|niggar|nigguh|negro|negroid|groid|coon|coons|burrhead|bluegum|golliwog|kaffir|kaffer|kafir|kaffre|kuffar|mau-mau|mouli|mulignan|mulignon|moolinyan|pickaninny|quashie|rastus|sheboon|spearchucker|thicklips|wog)\b': 'a racial slur against black people.',
+    r'\b(savage)\b': "a word that has racist roots in colonial violence against indigenous peoples and shouldn't be used. Some alternatives are: ridiculous, absurd, ruthless, brutal, rough, wild.",
     # Ethno-religious identity
     r'\b(mussie|haji|hajji|hodgie|raghead|towelhead|mohammedan)\b': 'a slur against Muslim people and people whose appearance leads them to be perceived as Muslim like Sikhs',
     r'\b(ayrab|a-rab)\b': 'intentional mispelling of an Arab person meant as a slur',
