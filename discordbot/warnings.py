@@ -7,7 +7,7 @@ WARNINGS = {
     r'\b(hysterical)\b': 'sexist language. Some alternatives: hilarious, funny',
     r'\b(bimbo|bitch|cunt|hag|slut|twat|whore)\b': 'sexist language',
     # LGBT-related slurs
-    r'\b(sissy|pansy|sodomite|poofter|pillow-biter|bugger|fudgepacker|cocksucker|fag|faggot|flamer|ponce|tapette|nola|quean|jocker|poove|woofter|)\b': 'a homophobic word or slur used against gay men',
+    r'\b(sissy|pansy|sodomite|poofter|pillow-biter|bugger|fudgepacker|cocksucker|fag|faggot|flamer|ponce|tapette|nola|quean|jocker|poove|woofter)\b': 'a homophobic word or slur used against gay men',
     r'\b(dyke|lesbo)\b': 'a homophobic slur used against gay women',
     r'\b(fauxbian)\b': 'a biphobic slur used against bisexual women',
     r'\b(tranny|trannie|shim|heshe|shehe|she-man|sheman|transtrender|cuntboy|hefemale|shemale|dickgirl|ladyboy|trans-identified)\b': 'A slur or derogatory way of referring to transgender people',
@@ -18,7 +18,7 @@ WARNINGS = {
     r'\b(crazy|insane|bonkers)\b': 'ableist language. Some alternatives: ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
     r'\b(mad)\b': 'ableist language. Some alternatives: angry, furious, annoyed',
     r'\b(idiot|idiotic|imbecile|moron|retard|lunatic)\b': 'ableist language. Some alternatives: uninformed, ignorant, incorrect, wrong',
-    r'\b(cretin|cripple|midget|gimp|freak|nutter|schizo|tard|spaz|)\b': '',
+    r'\b(cretin|cripple|midget|gimp|freak|nutter|schizo|tard|spaz)\b': '',
     # Physical conditions
     r'\b(dumb)\b': 'ableist language. Some alternatives: silly, foolish, ignorant, uninformed, ridiculous, pathetic, absurd',
     r'\b(lame)\b': 'ableist language. Some alternatives: silly, foolish, ridiculous, pathetic, absurd, uncool',
