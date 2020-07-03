@@ -26,7 +26,7 @@ WARNINGS = {
     # Racism
     r'\b(gypsy|gipp|pikey|piky)\b': 'a racial slur against the Romani people.',
     r'\b(beaner|beaney|tacohead|wetback)\b': 'a racial slur for Mexican/mestizo people',
-    r'\b(chink|chonky|jap|dothead|gook|gooky|nip|slant-eye|slope|slopehead|slopey|sloper|zipperhead)\b': 'a racial slur against Asians',
+    r'\b(chink|chonky|jap|dothead|gook|gooky|nip|slant-eye|slopehead|slopey|sloper|zipperhead)\b': 'a racial slur against Asians',
     r'\b(guido|wop)\b': 'a racial slur for Italians',
     r'\b(gusano)\b': 'a racial slur for Cubans that fled the Cuban Revolution',
     r'\b(injun|nitchie|neche|neechee|neejee|nitchy|nitchee|nidge|redskin|squaw)\b': 'a racial slur for Native Americans',
