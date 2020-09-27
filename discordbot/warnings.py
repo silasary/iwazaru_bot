@@ -49,15 +49,18 @@ WARNINGS = {
     r'\b(psycho|schitzo|schizo|spaz|derp|spastic|spacker)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
 }
 
+GUYS_RESPONSE = """Many people feel excluded when you refer to a group of people as "Guys".
+Some alternatives if you meant to refer to explicitly men: men, dudes
+Some alternatives if you meant to refer to people in general: all, everyone, friends, folks, people"""
+
 
 def parse_message(text: str) -> Optional[str]:
     for key in WARNINGS:
         m = re.search(key, text, re.IGNORECASE)
         if m:
-            return 'gentle reminder: {0} is {1}'.format(m.group(0), WARNINGS[key])
+            return 'gentle reminder: {} is {}'.format(m.group(0), WARNINGS[key])
 
     if re.search(r'\b(hey|hi|you)\W+(guys)\b', text, re.IGNORECASE):
-        return """Many people feel excluded when you refer to a group of people as "Guys".
-Some alternatives if you meant to refer to explicitly men: men, dudes
-Some alternatives if you meant to refer to people in general: all, everyone, friends, folks, people"""
+        return GUYS_RESPONSE
+
     return None
