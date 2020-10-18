@@ -12,5 +12,6 @@ munch = "*"
 sentry-sdk = "*"
 
 [dev-packages]
-pylint = "*"
+flake8 = "*"
 mypy = "*"
+pytest = "*"

@@ -1,20 +1,33 @@
 import inspect
 import json
 import os
-import random
-import string
+from typing import Any
+from typing import Dict
 
 from .exceptions import InvalidArgumentException
 
 DEFAULTS = {
-    "token": "",
+    'token': '',
 }
 
-def get(key: str) -> str:
+CONFIG_FILE = 'config.json'
+
+
+def _load() -> Dict[str, Any]:
     try:
-        cfg = json.load(open('config.json'))
+        with open(CONFIG_FILE) as f:
+            return json.load(f)
     except FileNotFoundError:
-        cfg = {}
+        return {}
+
+
+def _dump(cfg: Dict[str, Any]) -> None:
+    with open(CONFIG_FILE, 'w') as f:
+        json.dump(cfg, f, indent=4)
+
+
+def get(key: str) -> str:
+    cfg = _load()
     if key in cfg:
         return cfg[key]
     elif key in os.environ:
@@ -23,25 +36,24 @@ def get(key: str) -> str:
         # Lock in the default value if we use it.
         cfg[key] = DEFAULTS[key]
 
-        if inspect.isfunction(cfg[key]): # If default value is a function, call it.
+        # If default value is a function, call it.
+        if inspect.isfunction(cfg[key]):
             cfg[key] = cfg[key]()
     else:
-        raise InvalidArgumentException('No default or other configuration value available for {key}'.format(key=key))
+        raise InvalidArgumentException(
+            f'No default or other configuration value available for {key}',
+        )
 
-    print("CONFIG: {0}={1}".format(key, cfg[key]))
-    fh = open('config.json', 'w')
-    fh.write(json.dumps(cfg, indent=4))
+    print('CONFIG: {}={}'.format(key, cfg[key]))
+    _dump(cfg)
     return cfg[key]
 
+
 def write(key: str, value: str) -> str:
-    try:
-        cfg = json.load(open('config.json'))
-    except FileNotFoundError:
-        cfg = {}
+    cfg = _load()
 
     cfg[key] = value
 
-    print("CONFIG: {0}={1}".format(key, cfg[key]))
-    fh = open('config.json', 'w')
-    fh.write(json.dumps(cfg, indent=4, sort_keys=True))
+    print('CONFIG: {}={}'.format(key, cfg[key]))
+    _dump(cfg)
     return cfg[key]

@@ -3,11 +3,11 @@ python:
   - "3.8"
 cache: pip
 install:
-  - pip install pipenv 
+  - pip install pipenv
   - pipenv install --dev
 script:
-  # - pipenv run pylint discordbot shared
-  - pipenv run mypy --ignore-missing-imports --disallow-untyped-calls --disallow-incomplete-defs .
+  - pipenv run flake8 .
+  - pipenv run mypy .
 notifications:
     webhooks: https://www.travisbuddy.com/?insertMode=update
     on_success: never
