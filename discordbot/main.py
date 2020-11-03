@@ -77,12 +77,14 @@ class Bot(discord.Client):
                 await data.response_message.add_reaction('❎')
 
     async def on_server_join(self, server: Guild) -> None:
-        await server.default_channel.send(
-            ':see_no_evil: :hear_no_evil: :speak_no_evil:',
-        )
-        await server.default_channel.send(
-            'If I react to a message, click on that reaction to see more details.',
-        )
+        for channel in server.text_channels:
+            try:
+                await channel.send(':see_no_evil: :hear_no_evil: :speak_no_evil:')
+                await channel.send('If I react to a message, click on that reaction to see more details.')
+                await channel.send('I have no moderation functionality, and only exist to help with self-improvement.')
+                return
+            except Forbidden:
+                pass
 
     async def on_ready(self) -> None:
         print(
