@@ -1,25 +1,25 @@
-import sys
 from typing import Dict
 
-import discord
+from discord.ext import commands
 from discord.errors import Forbidden
 from discord.guild import Guild
 from discord.message import Message
 from discord.reaction import Reaction
 from discord.user import User
 
-from . import warnings
+from . import warnings, cmd_cog
 from .messagedata import MessageData
 from shared import configuration
 from shared.limited_dict import LimitedSizeDict
 
 
-class Bot(discord.Client):
+class Bot(commands.Bot):
     def __init__(self) -> None:
-        super().__init__()
+        super().__init__(command_prefix=commands.when_mentioned_or('🙊'))
         self.cache: Dict[Message, MessageData] = LimitedSizeDict(
             size_limit=1000,
         )
+        self.help_command.get_ending_note = self.help_footer
 
     def init(self) -> None:
         self.run(configuration.get('token'))
@@ -37,10 +37,7 @@ class Bot(discord.Client):
                 self.cache[message] = data
             except Forbidden:
                 pass
-        if message.content == '!restartbot':
-            await message.channel.send('Rebooting!')
-            await self.logout()
-            sys.exit()
+        await self.process_commands(message)
 
     async def on_message_edit(self, before: Message, after: Message) -> None:
         if after.author == self.user:
@@ -100,9 +97,14 @@ class Bot(discord.Client):
         )
         print('--------')
 
+    def help_footer(self) -> str:
+        return "I really don't have any commands.  If you want an example of what I can do, just say 'Stupid bot', and click on the 🙊.\n\n"
+
 
 def init() -> None:
     client = Bot()
+    client.load_extension("jishaku")
+    client.add_cog(cmd_cog.Commands(client))
     client.init()
 
 

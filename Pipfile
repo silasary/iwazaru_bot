@@ -10,6 +10,7 @@ python_version = "3.8"
 "discord.py" = "*"
 munch = "*"
 sentry-sdk = "*"
+jishaku = "*"
 
 [dev-packages]
 flake8 = "*"
