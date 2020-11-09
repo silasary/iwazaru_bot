@@ -8,6 +8,7 @@ from .exceptions import InvalidArgumentException
 
 DEFAULTS = {
     'token': '',
+    'dbl_token': ''
 }
 
 CONFIG_FILE = 'config.json'

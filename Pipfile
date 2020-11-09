@@ -11,6 +11,7 @@ python_version = "3.8"
 munch = "*"
 sentry-sdk = "*"
 jishaku = "*"
+dblpy = "*"
 
 [dev-packages]
 flake8 = "*"
