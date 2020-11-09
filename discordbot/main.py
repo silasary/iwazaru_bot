@@ -103,7 +103,8 @@ class Bot(commands.Bot):
 
 def init() -> None:
     client = Bot()
-    client.load_extension("jishaku")
+    client.load_extension('jishaku')
+    client.load_extension('discordbot.topgg')
     client.add_cog(cmd_cog.Commands(client))
     client.init()
 
