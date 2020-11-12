@@ -175,11 +175,11 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:4849f132941d68144df0a3785ccc4fe423430ba5db0108d045c8cadbc90f517a",
-                "sha256:bad31cb622ceee0ab46c4c884cf61957def0ff2e644de0a7a093678844c9ccac"
+                "sha256:097116a6f16f13482d2a2e56792088b9b2920f4eb6b4f84a2c90555fb673db74",
+                "sha256:61ad24434555a42c0439770462df38b47d05d9e8e353d93ec3742900975e3e65"
             ],
             "index": "pypi",
-            "version": "==1.26.0"
+            "version": "==1.26.1"
         },
         "wheel": {
             "hashes": [
