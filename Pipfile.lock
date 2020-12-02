@@ -182,10 +182,11 @@
         },
         "wheel": {
             "hashes": [
-                "sha256:497add53525d16c173c2c1c733b8f655510e909ea78cc0e29d374243544b77a2",
-                "sha256:99a22d87add3f634ff917310a3d87e499f19e663413a52eb9232c447aa646c9f"
+                "sha256:645f81da70dcd993844005762acbb7e8628306bec414c90539d276fbd4fc7cbe",
+                "sha256:e17f05e14282d0e666327f800ef43123b40f3dbc13a86193b604f2ebfae0dabc"
             ],
-            "version": "==0.35.1"
+            "index": "pypi",
+            "version": "==0.36.0"
         },
         "yarl": {
             "hashes": [
@@ -272,7 +273,6 @@
                 "sha256:05af3bb85d320377db281cf254ab050e1a7ebcbf5410685a9a407e18a1f81236",
                 "sha256:eb41423378682dadb7166144a4926e443093863024de508ca5c9737d6bc08376"
             ],
-            "index": "pypi",
             "version": "==20.7"
         },
         "pluggy": {
