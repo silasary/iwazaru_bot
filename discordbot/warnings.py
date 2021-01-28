@@ -19,7 +19,7 @@ WARNINGS = {
     r'\b(mad)\b': 'ableist language. Some alternatives: angry, furious, annoyed',
     r'\b(idiot|idiotic|imbecile|moron|retard|lunatic)\b': 'ableist language. Some alternatives: uninformed, ignorant, incorrect, wrong',
     r'\b(cretin|midget|freak|nutter|schizo|tard|spaz)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
-    r'\b(sperg|autist)\b': 'a slur against autistic people'
+    r'\b(sperg|autist)\b': 'a slur against autistic people',
     # Physical conditions
     r'\b(dumb)\b': 'ableist language. Some alternatives: silly, foolish, ignorant, uninformed, ridiculous, pathetic, absurd',
     r'\b(lame)\b': 'ableist language. Some alternatives: silly, foolish, ridiculous, pathetic, absurd, uncool',
