@@ -3,7 +3,7 @@ from typing import Optional
 
 WARNINGS = {
     # Sexist/exclusionary language
-    r'\b(females)\b': 'pretty objectifying. If you are referring to women, use the gender term instead',
+    r'\b(females)\b': 'pretty objectifying. If you are referring to women, use that instead',
     r'\b(hysterical)\b': 'sexist language. Some alternatives: hilarious, funny',
     r'\b(bimbo|bitch|cunt|hag|slut|twat|whore)\b': 'sexist language',
     # LGBT-related slurs
@@ -18,11 +18,12 @@ WARNINGS = {
     r'\b(crazy|insane|bonkers)\b': 'ableist language. Some alternatives: ludicrous, wild, ridiculous, absurd, chaotic, silly, nonsensical, unreal, unbelievable',
     r'\b(mad)\b': 'ableist language. Some alternatives: angry, furious, annoyed',
     r'\b(idiot|idiotic|imbecile|moron|retard|lunatic)\b': 'ableist language. Some alternatives: uninformed, ignorant, incorrect, wrong',
-    r'\b(cretin|cripple|midget|freak|nutter|schizo|tard|spaz)\b': '',
+    r'\b(cretin|midget|freak|nutter|schizo|tard|spaz)\b': 'ableist language. check out some alternatives! <http://www.autistichoya.com/p/ableist-words-and-terms-to-avoid.html> (scroll down)',
+    r'\b(sperg|autist)\b': 'a slur against autistic people',
     # Physical conditions
     r'\b(dumb)\b': 'ableist language. Some alternatives: silly, foolish, ignorant, uninformed, ridiculous, pathetic, absurd',
     r'\b(lame)\b': 'ableist language. Some alternatives: silly, foolish, ridiculous, pathetic, absurd, uncool',
-    r'\b(cripple|crippled)\b': 'ableist language. Some alternatives: broken, not working',
+    r'\b(cripple|crippled|crip)\b': 'ableist language. Some alternatives: broken, not working',
     # Racism
     r'\b(gypsy|gipp|pikey|piky)\b': 'a racial slur against the Romani people.',
     r'\b(beaner|beaney|tacohead|wetback)\b': 'a racial slur for Mexican/mestizo people',
