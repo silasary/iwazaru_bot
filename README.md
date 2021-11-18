@@ -1,6 +1,6 @@
 # Iwazaru
 
-Discord bot to replicate the gentle reminders provided by Games and Play's slackbot.
+![GIF of the bot in action](sample.gif)
 
 ## Purpose
 

@@ -1,5 +1,6 @@
 import dbl
 from discord.ext import commands
+
 from shared import configuration
 
 
@@ -15,7 +16,7 @@ class TopGG(commands.Cog):
 
     # pylint: disable=no-self-use
     async def on_guild_post(self):
-        print("Server count posted successfully")
+        print('Server count posted successfully')
 
 
 def setup(bot):
