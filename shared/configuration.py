@@ -1,14 +1,13 @@
 import inspect
 import json
 import os
-from typing import Any
-from typing import Dict
+from typing import Any, Dict
 
 from .exceptions import InvalidArgumentException
 
 DEFAULTS = {
     'token': '',
-    'dbl_token': ''
+    'dbl_token': '',
 }
 
 CONFIG_FILE = 'config.json'

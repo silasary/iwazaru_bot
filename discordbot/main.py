@@ -1,92 +1,116 @@
+import logging
 from typing import Dict
 
-from discord.ext import commands
-from discord.errors import Forbidden
-from discord.guild import Guild
-from discord.message import Message
-from discord.reaction import Reaction
-from discord.user import User
+import dis_snek.const
+from dis_snek.client import Snake
+from dis_snek.errors import Forbidden
+from dis_snek.models.enums import Intents
+from dis_snek.models.events.discord import MessageCreate, MessageReactionAdd, MessageUpdate
+from dis_snek.models.listener import listen
+from dis_snek.models.snowflake import Snowflake_Type
 
-from . import warnings, cmd_cog
-from .messagedata import MessageData
 from shared import configuration
 from shared.limited_dict import LimitedSizeDict
 
+from . import warnings
+from .messagedata import MessageData
 
-class Bot(commands.Bot):
-    def __init__(self) -> None:
-        super().__init__(command_prefix=commands.when_mentioned_or('🙊'))
-        self.cache: Dict[Message, MessageData] = LimitedSizeDict(
-            size_limit=1000,
-        )
-        self.help_command.get_ending_note = self.help_footer
 
-    def init(self) -> None:
-        self.run(configuration.get('token'))
+msg_cache: Dict[Snowflake_Type, MessageData] = LimitedSizeDict(
+    size_limit=1000,
+)
 
-    async def on_message(self, message: Message) -> None:
-        if message.author == self.user:
+logging.basicConfig()
+cls_log = logging.getLogger(dis_snek.const.logger_name)
+cls_log.setLevel(logging.DEBUG)
+
+
+class Bot(Snake):
+    def __init__(self):
+        super().__init__(intents=Intents(Intents.DEFAULT | Intents.MESSAGES))
+
+    @listen()
+    async def on_message_create(self, event: MessageCreate) -> None:
+        print(repr(event))
+        if event.message.author == self.user:
             return
-        if message.author.bot:
+        if event.message.author.bot:
             return
         data = MessageData()
-        data.response_text = warnings.parse_message(message.content)
+        data.response_text = warnings.parse_message(event.message.content)
         if data.response_text is not None:
             try:
-                await message.add_reaction('🙊')
-                self.cache[message] = data
+                await event.message.add_reaction('🙊')
+                msg_cache[event.message.id] = data
             except Forbidden:
                 pass
-        await self.process_commands(message)
 
-    async def on_message_edit(self, before: Message, after: Message) -> None:
-        if after.author == self.user:
+    @listen()
+    async def on_message_update(self, event: MessageUpdate) -> None:
+        if event.after.author == self.user:
             return
-        if after.author.bot:
+        if event.after.author.bot:
             return
 
-        data = self.cache.get(after, None)
+        data = msg_cache.get(event.after.id, None)
         if data is None:
             return
 
-        data.response_text = warnings.parse_message(after.content)
-        prev_reacted = [r for r in after.reactions if r.me]
+        data.response_text = warnings.parse_message(event.after.content)
+        prev_reacted = [r for r in event.after.reactions if r.me]
         if data.response_text is None and prev_reacted:
-            await after.remove_reaction('🙊', self.user)
+            await event.after.remove_reaction('🙊', self.user)
             if data.response_message is not None:
                 await data.response_message.delete()
 
-    async def on_reaction_add(self, reaction: Reaction, author: User) -> None:
+    @listen()
+    async def on_message_reaction_add(self, event: MessageReactionAdd) -> None:
+        for i in range(len(event.message.reactions)):
+            r = event.message.reactions[i]
+            if r.emoji == event.emoji:
+                reaction = r
+                break
+        else:
+            return
         c = reaction.count
         if reaction.me:
             c = c - 1
-        if reaction.message.author == self.user:
-            if c > 0 and not reaction.custom_emoji and reaction.emoji == '❎':
+
+        if reaction.message.author.id == self.user.id:
+            if c > 0 and reaction.emoji.name == '❎':
                 await reaction.message.delete()
-        elif c > 0 and reaction.emoji == '🙊':
-            data = self.cache.get(reaction.message, None)
+        elif c > 0 and reaction.emoji.name == '🙊':
+            data = msg_cache.get(reaction.message.id, None)
             if data is None:
-                return
+                response_text = warnings.parse_message(event.message.content)
+                if response_text is None:
+                    return
+                data = MessageData()
+                data.response_text = response_text
+                msg_cache[reaction.message.id] = data
+
             if data.response_message is None and data.response_text is not None:
                 data.response_message = await reaction.message.channel.send(
                     data.response_text,
                 )
                 await data.response_message.add_reaction('❎')
 
-    async def on_server_join(self, server: Guild) -> None:
-        for channel in server.text_channels:
-            try:
-                await channel.send(':see_no_evil: :hear_no_evil: :speak_no_evil:')
-                await channel.send('If I react to a message, click on that reaction to see more details.')
-                await channel.send('I have no moderation functionality, and only exist to help with self-improvement.')
-                return
-            except Forbidden:
-                pass
+    # @listen()  # dis-snake doesn't have an analogue for this yet.
+    # async def on_server_join(event) -> None:
+    #     for channel in server.text_channels:
+    #         try:
+    #             await channel.send(':see_no_evil: :hear_no_evil: :speak_no_evil:')
+    #             await channel.send('If I react to a message, click on that reaction to see more details.')
+    #             await channel.send('I have no moderation functionality, and only exist to help with self-improvement.')
+    #             return
+    #         except Forbidden:
+    #             pass
 
+    @listen()
     async def on_ready(self) -> None:
         print(
             'Logged in as {username} ({id})'.format(
-                username=self.user.name,
+                username=self.user,
                 id=self.user.id,
             ),
         )
@@ -97,16 +121,12 @@ class Bot(commands.Bot):
         )
         print('--------')
 
-    def help_footer(self) -> str:
-        return "I really don't have any commands.  If you want an example of what I can do, just say 'Stupid bot', and click on the 🙊.\n\n"
+
+client = Bot()
 
 
 def init() -> None:
-    client = Bot()
-    client.load_extension('jishaku')
-    client.load_extension('discordbot.topgg')
-    client.add_cog(cmd_cog.Commands(client))
-    client.init()
+    client.start(configuration.get('token'))
 
 
 if __name__ == '__main__':

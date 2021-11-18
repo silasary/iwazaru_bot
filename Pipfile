@@ -4,14 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [requires]
-python_version = "3.8"
+python_version = "3.10"
 
 [packages]
-"discord.py" = "*"
 munch = "*"
 sentry-sdk = "*"
-jishaku = "*"
-dblpy = "*"
+# jishaku = "*"
+# dblpy = "*"
+dis-snek = "*"
+orjson = "*"
 
 [dev-packages]
 flake8 = "*"
