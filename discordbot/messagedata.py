@@ -1,6 +1,6 @@
 from typing import Optional
+from dis_snek.models.discord_objects.message import Message
 
-from discord import Message
 from munch import Munch
 
 __all__ = 'MessageData'
