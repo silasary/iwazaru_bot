@@ -26,7 +26,7 @@ cls_log.setLevel(logging.DEBUG)
 
 
 class Bot(Snake):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(intents=Intents(Intents.DEFAULT | Intents.MESSAGES))
 
     @listen()
