@@ -1,0 +1,19 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pipenv
+        pipenv install --dev
+    - name: Linting
+      run: |
+        pipenv run flake8 .
+        pipenv run mypy .
