@@ -22,7 +22,7 @@ msg_cache: Dict[Snowflake_Type, MessageData] = LimitedSizeDict(
 
 logging.basicConfig()
 cls_log = logging.getLogger(dis_snek.const.logger_name)
-cls_log.setLevel(logging.DEBUG)
+cls_log.setLevel(logging.WARNING)
 
 
 class Bot(Snake):
