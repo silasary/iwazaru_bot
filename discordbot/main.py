@@ -31,7 +31,6 @@ class Bot(Snake):
 
     @listen()
     async def on_message_create(self, event: MessageCreate) -> None:
-        print(repr(event))
         if event.message.author == self.user:
             return
         if event.message.author.bot:
