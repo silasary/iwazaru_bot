@@ -7,6 +7,7 @@ from dis_snek.errors import Forbidden
 from dis_snek.models.enums import Intents
 from dis_snek.models.events.discord import MessageCreate, MessageReactionAdd, MessageUpdate
 from dis_snek.models.listener import listen
+from dis_snek.models.listener import listen
 from dis_snek.models.snowflake import Snowflake_Type
 
 from shared import configuration
@@ -115,7 +116,7 @@ class Bot(Snake):
         )
         print(
             'Connected to {}'.format(
-                ', '.join([server.name for server in self.guilds]),
+                ', '.join([server.name for server in self.guilds if server]),
             ),
         )
         print('--------')
