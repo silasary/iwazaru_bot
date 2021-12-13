@@ -1,5 +1,6 @@
 import logging
 import sentry_sdk
+from typing import Any
 
 from discordbot import main
 

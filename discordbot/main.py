@@ -7,7 +7,6 @@ from dis_snek.errors import Forbidden
 from dis_snek.models.enums import Intents
 from dis_snek.models.events.discord import MessageCreate, MessageReactionAdd, MessageUpdate
 from dis_snek.models.listener import listen
-from dis_snek.models.listener import listen
 from dis_snek.models.snowflake import Snowflake_Type
 
 from shared import configuration
