@@ -1,3 +1,4 @@
+import logging
 import sentry_sdk
 
 from discordbot import main
