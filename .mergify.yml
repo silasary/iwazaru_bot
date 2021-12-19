@@ -1,0 +1,16 @@
+pull_request_rules:
+  - name: Automatic merge on approval
+    conditions:
+      - "#approved-reviews-by>=1"
+    actions:
+      merge:
+        method: merge
+pull_request_rules:
+  - name: automatic merge dependency updates
+    conditions:
+      - check-success=build
+      - author~=(dependabot)
+      - -files~=^(!?.github/workflows/)
+    actions:
+      merge:
+        method: rebase      
