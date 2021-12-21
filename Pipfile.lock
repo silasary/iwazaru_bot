@@ -107,7 +107,7 @@
                 "sha256:2163e1640ddb52b7a8c80d0a67a08587e5d245cc9c553a74a847056bc2976b15",
                 "sha256:8ca1e4fcf50d07413d66d1a5e416e42cfdf5851c981d679a09851a6853383b3c"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==4.0.2"
         },
         "attrs": {
@@ -135,11 +135,11 @@
         },
         "dis-snek": {
             "hashes": [
-                "sha256:255939d618687d4ce4a5a3ffe8d4e1ded42f1c7c57009e4c9a1c84cf143cb416",
-                "sha256:95d222b8d32ae38230b8c11e8c4bab94796eba6af87bbb0464621c3bdd43be4a"
+                "sha256:48d8bd9200694153a5a6b5ea15c62345b6378a4cc78f24e7c46a71eaaa2a4d51",
+                "sha256:61bca7f0796bc5e50cbfa9d4a4f92e28db1330da54cb02c7d5bab2c65d528c11"
             ],
             "index": "pypi",
-            "version": "==4.0.0"
+            "version": "==4.1.0"
         },
         "frozenlist": {
             "hashes": [
