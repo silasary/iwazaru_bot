@@ -135,11 +135,11 @@
         },
         "dis-snek": {
             "hashes": [
-                "sha256:a77bf4c423df1595557053ae44b1704e2a05516b402288910bd0448d4f9087ab",
-                "sha256:a7f290eefe1305f7a8d215fe36b22ad126e7ffc80ba4d39ef4f92ae9460c5ec8"
+                "sha256:dfeb283474bdef60d1078ca99ac0d791f40948effabb25e09215f07219c8aef0",
+                "sha256:fe74e209f31f6f4822ba9307f8f6e515dfd432ab1dd33f4dbedeeef142310261"
             ],
             "index": "pypi",
-            "version": "==4.3.0"
+            "version": "==4.4.0"
         },
         "frozenlist": {
             "hashes": [
