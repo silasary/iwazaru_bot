@@ -9,10 +9,10 @@ python_version = "3.10"
 [packages]
 munch = "*"
 sentry-sdk = "*"
-# jishaku = "*"
 # dblpy = "*"
 dis-snek = "*"
 orjson = "*"
+dis-taipan = "*"
 
 [dev-packages]
 flake8 = "*"

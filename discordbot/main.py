@@ -1,13 +1,9 @@
 import logging
 from typing import Dict
 
-import dis_snek.const
 from dis_snek.client import Snake
-from dis_snek.errors import Forbidden
-from dis_snek.models.enums import Intents
-from dis_snek.models.events.discord import MessageCreate, MessageReactionAdd, MessageUpdate
-from dis_snek.models.listener import listen
-from dis_snek.models.snowflake import Snowflake_Type
+from dis_snek.client.errors import Forbidden
+from dis_snek.models import Intents, MessageCreate, MessageReactionAdd, MessageUpdate, listen, Snowflake_Type
 
 from shared import configuration
 from shared.limited_dict import LimitedSizeDict
@@ -21,13 +17,17 @@ msg_cache: Dict[Snowflake_Type, MessageData] = LimitedSizeDict(
 )
 
 logging.basicConfig()
-cls_log = logging.getLogger(dis_snek.const.logger_name)
+cls_log = logging.getLogger('dis_snek')
 cls_log.setLevel(logging.WARNING)
 
 
 class Bot(Snake):
+    sentry_token = 'https://83766626d7a64c1084fd140390175ea5@sentry.io/1757452'
+
     def __init__(self) -> None:
         super().__init__(intents=Intents(Intents.DEFAULT | Intents.MESSAGES))
+        super().load_extension('dis_taipan.updater')
+        super().load_extension('dis_taipan.sentry')
 
     @listen()
     async def on_message_create(self, event: MessageCreate) -> None:
