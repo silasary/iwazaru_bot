@@ -2,8 +2,9 @@ import logging
 from typing import Dict
 
 from dis_snek.client import Snake
+from dis_snek.api.events import MessageCreate, MessageReactionAdd, MessageUpdate
 from dis_snek.client.errors import Forbidden
-from dis_snek.models import Intents, MessageCreate, MessageReactionAdd, MessageUpdate, listen, Snowflake_Type
+from dis_snek.models import Intents, listen, Snowflake_Type
 
 from shared import configuration
 from shared.limited_dict import LimitedSizeDict
