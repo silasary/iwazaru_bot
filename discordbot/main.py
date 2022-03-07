@@ -27,8 +27,11 @@ class Bot(Snake):
 
     def __init__(self) -> None:
         super().__init__(intents=Intents(Intents.DEFAULT | Intents.MESSAGES))
-        super().load_extension('dis_taipan.updater')
         super().load_extension('dis_taipan.sentry')
+        try:
+            super().load_extension('dis_taipan.updater')
+        except ImportError:
+            logging.warning('Could not load updater extension.')
 
     @listen()
     async def on_message_create(self, event: MessageCreate) -> None:
