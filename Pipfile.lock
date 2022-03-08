@@ -143,18 +143,18 @@
         },
         "dis-taipan": {
             "hashes": [
-                "sha256:24f2c934491aafe7a7b0caa5831d48684b0131a41d57cdeede880a7af05413ee",
-                "sha256:d5f2db6cee61213861431f431771ce5a7d37efb93861a84e4342e4291ac30387"
+                "sha256:17f39d41de5c70f3ed49c03e69993544f63ff35f0bd113b43f7481085b54a8ce",
+                "sha256:2623b139c0239aaba271a75b1300d9977a74f94bc667eb24341d08fa412b60fb"
             ],
             "index": "pypi",
-            "version": "==0.2.1"
+            "version": "==0.2.2"
         },
         "discord-typings": {
             "hashes": [
                 "sha256:65890c467751daa025dcef15683c32160f07427baf83380cfdf11d84ceec980a",
                 "sha256:854cfb66d34edad49b36d8aaffc93179bb397a97c81caba2da02896e72821a74"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==0.3.1"
         },
         "frozenlist": {
