@@ -130,16 +130,16 @@
                 "sha256:2857e29ff0d34db842cd7ca3230549d1a697f96ee6d3fb071cfa6c7393832597",
                 "sha256:6881edbebdb17b39b4eaaa821b438bf6eddffb4468cf344f09f89def34a8b1df"
             ],
-            "markers": "python_version >= '3.5'",
+            "markers": "python_full_version >= '3.5.0'",
             "version": "==2.0.12"
         },
         "dis-snek": {
             "hashes": [
-                "sha256:5a1fa72d3d5de96a7550a480d33a4f4a6ac8509391fa20890c2eb495fb45d221",
-                "sha256:c39d0ff5e1f0cde3a0feefcd05f4a7d6de1d6b1aafbda745bbaa7a63d541af0f"
+                "sha256:3a89c8f78c27407fb67d42dfaa51be6a507306306779e45cd47687bd846b3b23",
+                "sha256:c035a4f664f9a638b80089f2a9a3330a4254fc227ef2c83c96582df06f392281"
             ],
             "index": "pypi",
-            "version": "==7.0.0"
+            "version": "==8.0.0"
         },
         "dis-taipan": {
             "hashes": [
@@ -227,7 +227,7 @@
                 "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff",
                 "sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"
             ],
-            "markers": "python_version >= '3.5'",
+            "markers": "python_full_version >= '3.5.0'",
             "version": "==3.3"
         },
         "multidict": {
