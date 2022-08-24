@@ -1,10 +1,10 @@
 import logging
 from typing import Dict
 
-from dis_snek.client import Snake
-from dis_snek.api.events import MessageCreate, MessageReactionAdd, MessageUpdate
-from dis_snek.client.errors import Forbidden
-from dis_snek.models import Intents, listen, Snowflake_Type
+from naff.client import Client
+from naff.api.events import MessageCreate, MessageReactionAdd, MessageUpdate
+from naff.client.errors import Forbidden
+from naff.models import Intents, listen, Snowflake_Type
 
 from shared import configuration
 from shared.limited_dict import LimitedSizeDict
@@ -18,11 +18,11 @@ msg_cache: Dict[Snowflake_Type, MessageData] = LimitedSizeDict(
 )
 
 logging.basicConfig()
-cls_log = logging.getLogger('dis_snek')
+cls_log = logging.getLogger('naff')
 cls_log.setLevel(logging.WARNING)
 
 
-class Bot(Snake):
+class Bot(Client):
     sentry_token = 'https://83766626d7a64c1084fd140390175ea5@sentry.io/1757452'
 
     def __init__(self) -> None:

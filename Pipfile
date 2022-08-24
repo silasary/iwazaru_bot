@@ -10,11 +10,14 @@ python_version = "3.10"
 munch = "*"
 sentry-sdk = "*"
 # dblpy = "*"
-dis-snek = "*"
 orjson = "*"
 dis-taipan = "*"
+naff = "*"
 
 [dev-packages]
 flake8 = "*"
 mypy = "*"
 pytest = "*"
+
+[scripts]
+discordbot = "python run.py"

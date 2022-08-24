@@ -1,5 +1,5 @@
 from typing import Optional
-from dis_snek.models import Message
+from naff.models import Message
 
 from munch import Munch
 

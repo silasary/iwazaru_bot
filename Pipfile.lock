@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c1b9f3989e35134040ecf6ab0a2a68e79225cc76ba0e40a029f41e989e1c9236"
+            "sha256": "bf5a66e6d24dbed857afe8cdbc569573f06a1170bf3d27e3f3f638670c968901"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -133,14 +133,6 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==2.1.1"
-        },
-        "dis-snek": {
-            "hashes": [
-                "sha256:5a1fa72d3d5de96a7550a480d33a4f4a6ac8509391fa20890c2eb495fb45d221",
-                "sha256:c39d0ff5e1f0cde3a0feefcd05f4a7d6de1d6b1aafbda745bbaa7a63d541af0f"
-            ],
-            "index": "pypi",
-            "version": "==7.0.0"
         },
         "dis-taipan": {
             "hashes": [
@@ -309,7 +301,7 @@
                 "sha256:0ca111fa02c83022061089079a5710d158690c3a549942911ae6c1cb95e09c7b",
                 "sha256:51aceec2d0039a9472b6ded14b2ee5188577736cf63bb137be69203f62036007"
             ],
-            "markers": "python_version >= '3.10'",
+            "index": "pypi",
             "version": "==1.8.1"
         },
         "orjson": {
@@ -397,7 +389,7 @@
                 "sha256:3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e",
                 "sha256:b930dd878d5a8afb066a637fbb35144fe7901e3b209d1cd4f524bd0e9deee997"
             ],
-            "markers": "python_version >= '3.6'",
+            "markers": "python_version >= '3.5'",
             "version": "==1.26.12"
         },
         "yarl": {
@@ -467,6 +459,13 @@
         }
     },
     "develop": {
+        "atomicwrites": {
+            "hashes": [
+                "sha256:81b2c9071a49367a7f770170e5eec8cb66567cfbbc8c73d20ce5ca4a8d71cf11"
+            ],
+            "markers": "sys_platform == 'win32'",
+            "version": "==1.4.1"
+        },
         "attrs": {
             "hashes": [
                 "sha256:29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6",
@@ -474,6 +473,14 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==22.1.0"
+        },
+        "colorama": {
+            "hashes": [
+                "sha256:854bf444933e37f5824ae7bfc1e98d5bce2ebe4160d46b5edf346a89358e99da",
+                "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"
+            ],
+            "markers": "sys_platform == 'win32'",
+            "version": "==0.4.5"
         },
         "flake8": {
             "hashes": [
