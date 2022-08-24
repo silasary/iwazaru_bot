@@ -144,11 +144,11 @@
         },
         "dis-taipan": {
             "hashes": [
-                "sha256:8d5341690a4c113116bda14dbeb479aabc6fbf36fe64cbf27fd3db16babdfe85",
-                "sha256:e0590871b33963205a3148acee54b61ce21ddd9074ba99b08b970fd044de22db"
+                "sha256:068728fd19d671aa3ba3d654e34ca2770e8e6959150c81a7dbbc0e6c8818aff5",
+                "sha256:bf51aba6046f61e515b3ab995b6be65d78aa88014a1ea9610ecff7a76b26a74b"
             ],
             "index": "pypi",
-            "version": "==0.2.9"
+            "version": "==0.3.0"
         },
         "discord-typings": {
             "hashes": [
@@ -304,6 +304,14 @@
             "index": "pypi",
             "version": "==2.5.0"
         },
+        "naff": {
+            "hashes": [
+                "sha256:0ca111fa02c83022061089079a5710d158690c3a549942911ae6c1cb95e09c7b",
+                "sha256:51aceec2d0039a9472b6ded14b2ee5188577736cf63bb137be69203f62036007"
+            ],
+            "markers": "python_version >= '3.10'",
+            "version": "==1.8.1"
+        },
         "orjson": {
             "hashes": [
                 "sha256:05f20fa1a368207d16ecdf16072c3be58f85c4954cd2ed6c9704463963b9791a",
@@ -389,7 +397,7 @@
                 "sha256:3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e",
                 "sha256:b930dd878d5a8afb066a637fbb35144fe7901e3b209d1cd4f524bd0e9deee997"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==1.26.12"
         },
         "yarl": {
