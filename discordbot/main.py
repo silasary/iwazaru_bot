@@ -26,7 +26,7 @@ class Bot(Client):
     sentry_token = 'https://83766626d7a64c1084fd140390175ea5@sentry.io/1757452'
 
     def __init__(self) -> None:
-        super().__init__(intents=Intents(Intents.DEFAULT | Intents.MESSAGES))
+        super().__init__(intents=Intents(Intents.DEFAULT | Intents.MESSAGES | Intents.GUILD_MESSAGE_CONTENT))
         super().load_extension('dis_taipan.sentry')
         try:
             super().load_extension('dis_taipan.updater')
