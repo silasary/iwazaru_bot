@@ -298,11 +298,11 @@
         },
         "naff": {
             "hashes": [
-                "sha256:0ca111fa02c83022061089079a5710d158690c3a549942911ae6c1cb95e09c7b",
-                "sha256:51aceec2d0039a9472b6ded14b2ee5188577736cf63bb137be69203f62036007"
+                "sha256:20144495aed9452d9d2e713eb6ade9636601457ca3de255684b2186068505bcd",
+                "sha256:f4870ea304747368d6d750f3d52fcbc96017bd7afaa7ec06a3e9a68ff301997d"
             ],
             "index": "pypi",
-            "version": "==1.8.1"
+            "version": "==1.9.0"
         },
         "orjson": {
             "hashes": [
@@ -459,13 +459,6 @@
         }
     },
     "develop": {
-        "atomicwrites": {
-            "hashes": [
-                "sha256:81b2c9071a49367a7f770170e5eec8cb66567cfbbc8c73d20ce5ca4a8d71cf11"
-            ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==1.4.1"
-        },
         "attrs": {
             "hashes": [
                 "sha256:29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6",
@@ -473,14 +466,6 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==22.1.0"
-        },
-        "colorama": {
-            "hashes": [
-                "sha256:854bf444933e37f5824ae7bfc1e98d5bce2ebe4160d46b5edf346a89358e99da",
-                "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"
-            ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==0.4.5"
         },
         "flake8": {
             "hashes": [
