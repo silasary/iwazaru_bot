@@ -298,11 +298,11 @@
         },
         "naff": {
             "hashes": [
-                "sha256:20144495aed9452d9d2e713eb6ade9636601457ca3de255684b2186068505bcd",
-                "sha256:f4870ea304747368d6d750f3d52fcbc96017bd7afaa7ec06a3e9a68ff301997d"
+                "sha256:bb28ef19efb3f8e04f3569a3aac6b3e2738cf5747dea0bed483c458588933682",
+                "sha256:d0ab71c39ea5bf352228f0bc3d3dfe3610122cb01733bca4565497078de95650"
             ],
             "index": "pypi",
-            "version": "==1.9.0"
+            "version": "==1.10.0"
         },
         "orjson": {
             "hashes": [
