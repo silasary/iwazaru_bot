@@ -106,7 +106,7 @@
                 "sha256:f973157ffeab5459eefe7b97a804987876dd0a55570b8fa56b4e1954bf11329b",
                 "sha256:ff25f48fc8e623d95eca0670b8cc1469a83783c924a602e0fbd47363bb54aaca"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==3.8.3"
         },
         "aiosignal": {
@@ -135,11 +135,11 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5",
-                "sha256:e232343de1ab72c2aa521b625c80f699e356830fd0e2c620b465b304b17b0516"
+                "sha256:0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14",
+                "sha256:90c1a32f1d68f940488354e36370f6cca89f0f106db09518524c88d6ed83f382"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==2022.9.14"
+            "version": "==2022.9.24"
         },
         "charset-normalizer": {
             "hashes": [
@@ -313,11 +313,11 @@
         },
         "naff": {
             "hashes": [
-                "sha256:bb28ef19efb3f8e04f3569a3aac6b3e2738cf5747dea0bed483c458588933682",
-                "sha256:d0ab71c39ea5bf352228f0bc3d3dfe3610122cb01733bca4565497078de95650"
+                "sha256:ea9192556ad162e9990f41b1d4c315255e4354580614bdedc6ac4228c3339004",
+                "sha256:f1933c218b3a3ac93866245f8d2b034cc8d2b4b4ff48b76cacd37a0c2507abe2"
             ],
             "index": "pypi",
-            "version": "==1.10.0"
+            "version": "==1.11.1"
         },
         "orjson": {
             "hashes": [
