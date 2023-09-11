@@ -232,11 +232,11 @@
         },
         "discord-typings": {
             "hashes": [
-                "sha256:506cd96524571a311db541a0f5a802c35a58aba9fe46e1e51c5bcf1c5bef96ec",
-                "sha256:d65ac8c83c690135b5e12c5b43382b4a0ffc459c0e2a696536d0db542e051858"
+                "sha256:6c776da9153cde775c93cf744207297e4baec3f805b290216ebd490a86ff3140",
+                "sha256:9debd89834d4a6b354d74fa21c527a84fb59454d2d4f0229a3f7d9f7c39f09c3"
             ],
-            "markers": "python_version >= '3.7'",
-            "version": "==0.6.0"
+            "index": "pypi",
+            "version": "==0.7.0"
         },
         "emoji": {
             "hashes": [
