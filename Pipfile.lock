@@ -519,11 +519,11 @@
         },
         "sentry-sdk": {
             "hashes": [
-                "sha256:696ef61a323a207e6a20b018ddc6591adb81c671434c88d1a4f2e95ffa75556c",
-                "sha256:c98c8e9bb4dc8ff1e67473caf6467acfccf915dadcc26d0efb0d6791a8652610"
+                "sha256:3c2b027979bb400cd65a47970e64f8cef8acda86b288a27f42a98692505086cd",
+                "sha256:73383f28311ae55602bb6cc3b013830811135ba5521e41333a6e68f269413502"
             ],
             "index": "pypi",
-            "version": "==1.40.2"
+            "version": "==1.40.3"
         },
         "tomli": {
             "hashes": [
