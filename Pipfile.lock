@@ -239,11 +239,12 @@
         },
         "discord-typings": {
             "hashes": [
-                "sha256:6c776da9153cde775c93cf744207297e4baec3f805b290216ebd490a86ff3140",
-                "sha256:9debd89834d4a6b354d74fa21c527a84fb59454d2d4f0229a3f7d9f7c39f09c3"
+                "sha256:5cb849f9205085a81bf05dca90367a270af86148c4e91c355fc212354a4d55fd",
+                "sha256:6b51f9d1b6e5fb70c72c87dbcc608feaa5ff5c88bb77ea6b3dc53d80b8732792"
             ],
+            "index": "pypi",
             "markers": "python_version >= '3.7'",
-            "version": "==0.7.0"
+            "version": "==0.8.0"
         },
         "emoji": {
             "hashes": [
@@ -538,7 +539,6 @@
                 "sha256:69b1a937c3a517342112fb4c6df7e72fc39a38e7891a5730ed4985b5214b5475",
                 "sha256:b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==4.10.0"
         },
