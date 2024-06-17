@@ -742,6 +742,7 @@
                 "sha256:442f950141b4f43df752dd303511ffded3a04c2b6fb7f65980574f0c31e6e79c",
                 "sha256:949a39f6b86c3e1515ba1787c2022131d165a8ad271b11370a8819aa070269e4"
             ],
+            "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==2.12.0"
         },
