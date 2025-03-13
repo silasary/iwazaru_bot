@@ -18,12 +18,12 @@
     "default": {
         "aiohappyeyeballs": {
             "hashes": [
-                "sha256:27d9b0502cb854b379200a357cf8924340457cadd170bfff6ab7380fbfa905dc",
-                "sha256:bd426b701502752ccba9be65a75b5f136b14a210aa275410ce24094e9495d1ab"
+                "sha256:c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558",
+                "sha256:f349ba8f4b75cb25c99c5c2d84e997e485204d2902a9597802b0371f09331fb8"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.9'",
-            "version": "==2.6.0"
+            "version": "==2.6.1"
         },
         "aiohttp": {
             "hashes": [
