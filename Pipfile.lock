@@ -869,12 +869,12 @@
         },
         "sentry-sdk": {
             "hashes": [
-                "sha256:0ef0ed7168657ceb5a0be081f4102d92042a125462d1d1a29277992e344e749e",
-                "sha256:873437a989ee1b8b25579847bae8384515bf18cfed231b06c591b735c1781fe3"
+                "sha256:b89d64577075fd8c13088bc3609a2ce77a154e5beb8cba7cc16560b0539df4f7",
+                "sha256:e21016d318a097c2b617bb980afd9fc737e1efc55f9b4f0cdc819982c9717d5f"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.6'",
-            "version": "==2.50.0"
+            "version": "==2.51.0"
         },
         "tomli": {
             "hashes": [
