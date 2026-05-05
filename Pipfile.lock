@@ -180,7 +180,6 @@
                 "sha256:3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a",
                 "sha256:8d455352a37b71bf76a79caa83a3d6c25afee4a385d632127b6afb3963f1c580"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.7'",
             "version": "==2026.4.22"
         },
@@ -873,12 +872,12 @@
         },
         "sentry-sdk": {
             "hashes": [
-                "sha256:688d1c704ddecf382ea3326f21a67453d4caa95592d722b7c780a36a9d23109e",
-                "sha256:c1144d947352d54e5b7daa63596d9f848adf684989c06c4f5a659f0c85a18f6f"
+                "sha256:abcf65ee9a9d9cdebf9ad369782408ecca9c1c792686ef06ba34f5ab233527fe",
+                "sha256:cd265808ef8bf3f3edf69b527c0a0b2b6b1322762679e55b8987db2e9584aec1"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.6'",
-            "version": "==2.58.0"
+            "version": "==2.59.0"
         },
         "tomli": {
             "hashes": [
