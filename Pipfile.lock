@@ -381,12 +381,12 @@
         },
         "emoji": {
             "hashes": [
-                "sha256:205296793d66a89d88af4688fa57fd6496732eb48917a87175a023c8138995eb",
-                "sha256:eae4ab7d86456a70a00a985125a03263a5eac54cd55e51d7e184b1ed3b6757e4"
+                "sha256:c4230d80640def9071599ff56b1b5950fe13a2a94c0da98c5deab12431b24330",
+                "sha256:ff9e9b1c48389ef78ed1787e7693c555e84e6bb9bac16be1fd65e1616dbf80c8"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==2.15.0"
+            "version": "==2.16.0"
         },
         "frozenlist": {
             "hashes": [
