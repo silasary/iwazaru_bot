@@ -940,6 +940,7 @@
                 "sha256:fc2461ecc45f17893f8207e73b46ea8ba93e33630e51cf4af3fbc21d47462b1a",
                 "sha256:ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
             ],
+            "index": "pypi",
             "markers": "python_version >= '3.10'",
             "version": "==0.5.4"
         },
