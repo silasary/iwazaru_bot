@@ -1514,11 +1514,12 @@
         },
         "pyflakes": {
             "hashes": [
-                "sha256:b24f96fafb7d2ab0ec5075b7350b3d2d2218eab42003821c06344973d3ea2f58",
-                "sha256:f742a7dbd0d9cb9ea41e9a24a918996e8170c799fa528688d40dd582c8265f4f"
+                "sha256:0f7b7a78e8fcffd78b205200f045a70911f4179be1b42eac82c3323e0bf5c8aa",
+                "sha256:492b27735181e3d4a6acfc08738948b666bf3e696781854ea6e0d8540d566d52"
             ],
-            "markers": "python_version >= '3.9'",
-            "version": "==3.4.0"
+            "index": "pypi",
+            "markers": "python_version >= '3.10'",
+            "version": "==4.0.0"
         },
         "pygments": {
             "hashes": [
